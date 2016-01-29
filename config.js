@@ -2,8 +2,8 @@
 
 var mongo;
 var url = require('url');
-
-if (typeof process.env.MONGO_PORT_27017_TCP_ADDR === 'string') {
+console.log(process.env.MONGO_PORT_27017_TCP_ADDR,process.env.MONGO_PORT_27017_TCP_PORT);
+if (process.env.MONGO_PORT_27017_TCP_ADDR) {
   //var mongoConnection = url.parse(process.env.MONGODB_PORT);
   process.env.ME_CONFIG_MONGODB_SERVER  = process.env.MONGO_PORT_27017_TCP_ADDR;
   process.env.ME_CONFIG_MONGODB_PORT    = process.env.MONGO_PORT_27017_TCP_PORT;
