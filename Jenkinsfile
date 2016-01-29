@@ -15,8 +15,8 @@ node ('kubernetes'){
   git 'https://github.com/jmlambert78/mongo-express'
 
   def newVersion = getNewVersion{}
-  def clusterImageName = "${env.DOCKER_REGISTRY_SERVICE_HOST}:${env.DOCKER_REGISTRY_SERVICE_PORT}/${organisation}/${env.JOB_NAME}:${newVersion}"
-  def clusterImageNameWithoutTag = "${env.DOCKER_REGISTRY_SERVICE_HOST}:${env.DOCKER_REGISTRY_SERVICE_PORT}/${organisation}/${env.JOB_NAME}"
+  def clusterImageName = "${env.FABRIC8_DOCKER_REGISTRY_SERVICE_HOST}:${env.FABRIC8_DOCKER_REGISTRY_SERVICE_PORT}/${organisation}/${env.JOB_NAME}:${newVersion}"
+  def clusterImageNameWithoutTag = "${env.FABRIC8_DOCKER_REGISTRY_SERVICE_HOST}:${env.FABRIC8_DOCKER_REGISTRY_SERVICE_PORT}/${organisation}/${env.JOB_NAME}"
   def dockerhubImageName = "docker.io/${organisation}/${env.JOB_NAME}:${newVersion}"
 
   stage 'canary release'
