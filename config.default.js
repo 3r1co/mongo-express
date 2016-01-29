@@ -3,10 +3,10 @@
 var mongo;
 var url = require('url');
 
-if (typeof process.env.MONGODB_PORT === 'string') {
-  var mongoConnection = url.parse(process.env.MONGODB_PORT);
-  process.env.ME_CONFIG_MONGODB_SERVER  = mongoConnection.hostname;
-  process.env.ME_CONFIG_MONGODB_PORT    = mongoConnection.port;
+if (typeof process.env.MONGO_PORT_27017_TCP_ADDR === 'string') {
+  //var mongoConnection = url.parse(process.env.MONGODB_PORT);
+  process.env.ME_CONFIG_MONGODB_SERVER  = process.env.MONGO_PORT_27017_TCP_ADDR;
+  process.env.ME_CONFIG_MONGODB_PORT    = process.env.MONGO_PORT_27017_TCP_PORT;
 }
 
 // Accesing Bluemix variable to get MongoDB info
