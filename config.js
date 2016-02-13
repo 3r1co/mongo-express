@@ -8,24 +8,8 @@ if (typeof process.env.MONGO_PORT === 'string') {
   process.env.ME_CONFIG_MONGODB_SERVER  = mongoConnection.hostname;
   process.env.ME_CONFIG_MONGODB_PORT    = mongoConnection.port;
 }
+console.log(process.env);
 
-// Accesing Bluemix variable to get MongoDB info
-if (process.env.VCAP_SERVICES) {
-  var dbLabel = 'mongodb-2.4';
-  var env = JSON.parse(process.env.VCAP_SERVICES);
-  if (env[dbLabel]) {
-    mongo = env[dbLabel][0].credentials;
-  }
-} else {
-  mongo = {
-    db:       'db',
-    host:     'localhost',
-    password: 'pass',
-    port:     27017,
-    url:      '"mongodb://localhost:27017/db',
-    username: 'admin',
-  };
-}
 
 module.exports = {
   mongodb: {
