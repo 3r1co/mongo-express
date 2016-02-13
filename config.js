@@ -10,6 +10,7 @@ if (process.env.MONGO_PORT_27017_TCP_ADDR) {
 }
 
 // Accesing Bluemix variable to get MongoDB info
+/*
 if (process.env.VCAP_SERVICES) {
   var dbLabel = 'mongodb-2.4';
   var env = JSON.parse(process.env.VCAP_SERVICES);
@@ -26,7 +27,7 @@ if (process.env.VCAP_SERVICES) {
     username: 'admin',
   };
 }
-
+*/
 module.exports = {
   mongodb: {
     server: process.env.ME_CONFIG_MONGODB_SERVER  || mongo.host,
