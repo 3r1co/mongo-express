@@ -3,8 +3,8 @@
 var mongo;
 var url = require('url');
 
-if (typeof process.env.MONGODB_PORT === 'string') {
-  var mongoConnection = url.parse(process.env.MONGODB_PORT);
+if (typeof process.env.MONGO_PORT === 'string') {
+  var mongoConnection = url.parse(process.env.MONGO_PORT);
   process.env.ME_CONFIG_MONGODB_SERVER  = mongoConnection.hostname;
   process.env.ME_CONFIG_MONGODB_PORT    = mongoConnection.port;
 }
