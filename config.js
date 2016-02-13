@@ -2,15 +2,14 @@
 
 var mongo;
 var url = require('url');
-console.log(process.env);
-if (process.env.MONGO_PORT_27017_TCP_ADDR) {
-  //var mongoConnection = url.parse(process.env.MONGODB_PORT);
-  process.env.ME_CONFIG_MONGODB_SERVER  = process.env.MONGO_PORT_27017_TCP_ADDR;
-  process.env.ME_CONFIG_MONGODB_PORT    = process.env.MONGO_PORT_27017_TCP_PORT;
+
+if (typeof process.env.MONGODB_PORT === 'string') {
+  var mongoConnection = url.parse(process.env.MONGODB_PORT);
+  process.env.ME_CONFIG_MONGODB_SERVER  = mongoConnection.hostname;
+  process.env.ME_CONFIG_MONGODB_PORT    = mongoConnection.port;
 }
 
 // Accesing Bluemix variable to get MongoDB info
-/*
 if (process.env.VCAP_SERVICES) {
   var dbLabel = 'mongodb-2.4';
   var env = JSON.parse(process.env.VCAP_SERVICES);
@@ -27,7 +26,7 @@ if (process.env.VCAP_SERVICES) {
     username: 'admin',
   };
 }
-*/
+
 module.exports = {
   mongodb: {
     server: process.env.ME_CONFIG_MONGODB_SERVER  || mongo.host,
