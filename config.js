@@ -1,12 +1,12 @@
 'use strict';
 
 var mongo;
-var url = require('url');
+//var url = require('url');
 
-if (process.env.MONGO_PORT) {
-  var mongoConnection = url.parse(process.env.MONGO_PORT);
-  process.env.ME_CONFIG_MONGODB_SERVER  = mongoConnection.hostname;
-  process.env.ME_CONFIG_MONGODB_PORT    = mongoConnection.port;
+if (process.env.MONGO_PORT_27017_TCP_HOST) {
+  //var mongoConnection = url.parse(process.env.MONGO_PORT);
+  process.env.ME_CONFIG_MONGODB_SERVER  = process.env.MONGO_PORT_27017_TCP_HOST;
+  process.env.ME_CONFIG_MONGODB_PORT    = process.env.MONGO_PORT_27017_TCP_PORT;
 }
 console.log(process.env);
 
