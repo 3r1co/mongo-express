@@ -122,3 +122,4 @@ module.exports = {
 
   },
 };
+console.log("end of config");
