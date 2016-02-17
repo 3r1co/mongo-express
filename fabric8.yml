@@ -1,12 +1,12 @@
 ---
-buildName: "mongo-express-ok"
+buildName: "mongo-express"
 codeReview: false
 links:
   Git: "https://github.com/jmlambert78/mongo-express"
-  Job: "http://172.30.172.149:80/job/mongo-express-ok"
-  Production: "http://172.30.59.58:80/kubernetes/pods?namespace=mongo-express-production"
-  Room: "http://letschat.jml.oshift.paas.gemalto.com/#!/room/56bccc2e75368b1500bfab19"
-  Staging: "http://172.30.59.58:80/kubernetes/pods?namespace=mongo-express-staging"
+  Job: "http://172.30.96.219:80/job/mongo-express"
+  Production: "http://172.30.226.236:80/kubernetes/pods?namespace=mongo-express-production"
+  Room: "http://letschat.master.oshift.paas.gemalto.com/#!/room/56c4b1dac94c7714006d2c4d"
+  Staging: "http://172.30.226.236:80/kubernetes/pods?namespace=mongo-express-staging"
 environments:
   Staging: "mongo-express-staging"
   Production: "mongo-express-production"
