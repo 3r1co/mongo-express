@@ -2,12 +2,16 @@
  
 var mongo;
 //var url = require('url');
-
+/*
 if (process.env.MONGO_PORT_27017_TCP_HOST) {
-  //var mongoConnection = url.parse(process.env.MONGO_PORT);
   process.env.ME_CONFIG_MONGODB_SERVER  = process.env.MONGO_PORT_27017_TCP_HOST;
   process.env.ME_CONFIG_MONGODB_PORT    = process.env.MONGO_PORT_27017_TCP_PORT;
 }
+*/
+// Using DNS
+process.env.ME_CONFIG_MONGODB_SERVER  = "mongo";
+ process.env.ME_CONFIG_MONGODB_PORT    = 27017;
+
 console.log(process.env);
 
 
