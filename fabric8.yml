@@ -1,0 +1,13 @@
+---
+pipeline: "workflows/node/CanaryReleaseStageAndApprovePromote/Jenkinsfile"
+buildName: "re-mongo-express"
+codeReview: false
+links:
+  Git: "https://github.com/jmlambert78/mongo-express"
+  Job: "http://172.30.61.119:80/job/re-mongo-express"
+  Production: "http://172.30.64.160:80/kubernetes/pods?namespace=re-mongo-express-production"
+  Staging: "http://172.30.64.160:80/kubernetes/pods?namespace=re-mongo-express-staging"
+environments:
+  Staging: "re-mongo-express-staging"
+  Production: "re-mongo-express-production"
+useLocalFlow: true
