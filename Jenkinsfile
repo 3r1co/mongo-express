@@ -1,5 +1,6 @@
 #!/usr/bin/groovy
-def envStage = "${env.JOB_NAME}-staging"
+//def envStage = "${env.JOB_NAME}-staging"
+def envStage = "re-risk-engine-staging"
 def envProd = "${env.JOB_NAME}-production"
 
 node ('kubernetes'){
@@ -24,14 +25,5 @@ node ('kubernetes'){
   stage 'Rolling upgrade Staging'
     kubernetesApply(file: rc, environment: envStage)
 
-  approve{
-    room = null
-    version = canaryVersion
-    console = fabric8Console
-    environment = envStage
-  }
-
-  stage 'Rolling upgrade Production'
-    kubernetesApply(file: rc, environment: envProd)
-
+ 
 }
