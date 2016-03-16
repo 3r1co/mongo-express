@@ -1,5 +1,4 @@
 ---
-pipeline: "workflows/node/CanaryReleaseStageAndApprovePromote/Jenkinsfile"
 buildName: "re-mongo-express"
 codeReview: false
 links:
