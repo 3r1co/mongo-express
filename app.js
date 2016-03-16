@@ -9,11 +9,11 @@ const fs              = require('fs');
 const https           = require('https');
 const middleware      = require('./lib/middleware');
 const utils           = require('./lib/utils');
-const updateNotifier  = require('update-notifier');
+//const updateNotifier  = require('update-notifier');
 const pkg             = require('./package.json');
 
 let app               = express();
-let notifier          = updateNotifier({pkg});
+//let notifier          = updateNotifier({pkg});
 
 let config;
 let defaultPort = 80;
@@ -25,7 +25,7 @@ console.log('------------------------');
 console.log('\n');
 
 // Notify of any updates
-notifier.notify();
+//notifier.notify();
 
 try {
   config = utils.deepmerge(require('./config.default'), require('./config'));
