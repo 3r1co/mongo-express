@@ -3,7 +3,7 @@
 def envStage = "re-risk-engine-staging"
 def envProd = "${env.JOB_NAME}-production"
 
-node ('kubernetes'){
+node ('kubernetes'){ 
 
   git 'https://github.com/jmlambert78/mongo-express'
 
