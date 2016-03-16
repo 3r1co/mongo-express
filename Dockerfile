@@ -12,7 +12,7 @@ RUN set -x \
 
 WORKDIR /app
 COPY . /app
-
+RUN chmod 777 /app
 RUN npm install
 RUN cp config.default.js config.js
 
