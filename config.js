@@ -9,7 +9,7 @@ if (process.env.MONGO_PORT_27017_TCP_HOST) {
 }
 */
 // Using DNS
-process.env.ME_CONFIG_MONGODB_SERVER  = "mongo";
+ process.env.ME_CONFIG_MONGODB_SERVER  = process.env.MONGO_SERVICE_NAME ||"mongo";
  process.env.ME_CONFIG_MONGODB_PORT    = 27017;
 
 console.log(process.env);
