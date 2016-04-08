@@ -20,7 +20,7 @@ let defaultPort = 80;
 let server      = app;
 let sslOptions;
 
-console.log('Welcome to mongo-express');
+console.log('Welcome to mongo-express'); 
 console.log('------------------------');
 console.log('\n');
 
