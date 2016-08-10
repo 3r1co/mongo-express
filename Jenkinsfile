@@ -11,8 +11,19 @@ node ('kubernetes'){
     if (!fileExists ('Dockerfile')) {
       writeFile file: 'Dockerfile', text: 'FROM node:5.3-onbuild'
     }
-
-    def newVersion = performCanaryRelease {}
+    
+    def newVersion = "${versionPrefix}.${env.BUILD_NUMBER}"
+    
+    // Pushing image using docker client
+	kubernetes.pod('dockerpushpod').withImage('docker:1.9.1')
+	 .withPrivileged(true)
+	 .withHostPathMount('/var/run/docker.sock','/var/run/docker.sock')
+	 .withEnvVar('DOCKER_CONFIG','/home/jenkins/.docker/')
+	 .withServiceAccount('jenkins')
+	 .inside {
+		 sh "docker build --no-cache --pull -t ${env.FABRIC8_DOCKER_REGISTRY_SERVICE_HOST}:${env.FABRIC8_DOCKER_REGISTRY_SERVICE_PORT}/${env.KUBERNETES_NAMESPACE}/${env.JOB_NAME}:${newVersion} ."
+		 sh "docker push ${env.FABRIC8_DOCKER_REGISTRY_SERVICE_HOST}:${env.FABRIC8_DOCKER_REGISTRY_SERVICE_PORT}/${env.KUBERNETES_NAMESPACE}/${env.JOB_NAME}:${newVersion}"
+	 }
 
     def rc = getKubernetesJson {
       port = 8080
