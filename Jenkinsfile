@@ -12,7 +12,7 @@ node ('kubernetes'){
       writeFile file: 'Dockerfile', text: 'FROM node:5.3-onbuild'
     }
     
-    def newVersion = "${versionPrefix}.${env.BUILD_NUMBER}"
+    def newVersion = "1.0.${env.BUILD_NUMBER}"
     
     // Pushing image using docker client
 	kubernetes.pod('dockerpushpod').withImage('docker:1.9.1')
