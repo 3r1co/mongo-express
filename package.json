@@ -36,7 +36,7 @@
     "cookie-parser": "1.4.0",
     "errorhandler": "1.4.2",
     "express": "4.13.3",
-    "express-session": "1.11.3",
+    "express-session": "1.14.0",
     "gridfs-stream": "^1.1.1",
     "method-override": "2.3.5",
     "mongodb": "^2.1.0",
@@ -50,7 +50,7 @@
     "mocha": "2.3.3",
     "pre-commit": "^1.1.2"
   },
-    "engines": {
+  "engines": {
     "node": "5.4.1",
     "npm": "3.3.12"
   },
