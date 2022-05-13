@@ -30,7 +30,7 @@
     "basic-auth-connect": "^1.0.0",
     "body-parser": "^1.14.2",
     "busboy": "^0.2.12",
-    "cli-color": "^1.1.0",
+    "cli-color": "^2.0.1",
     "commander": "^2.9.0",
     "consolidate": "^0.13.0",
     "cookie-parser": "1.4.0",
